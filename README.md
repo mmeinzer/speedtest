@@ -1,6 +1,6 @@
 # Speedtest
 
-Speedtest wraps github.com/kylegrantlucas/speedtest and sends speed test data via POST request and basic auth to a web server
+Speedtest performs a [speed test](https://github.com/kylegrantlucas/speedtest) and sends the data via a POST request to the specified endpoint.
 
 ## How to use
 `./speedtest -e ENDPOINT_URL -u USERNAME -p PASSWORD`
