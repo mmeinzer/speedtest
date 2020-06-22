@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"strings"
+	"time"
 
 	"github.com/kylegrantlucas/speedtest"
 )
@@ -69,7 +70,9 @@ func main() {
 	req.Header.Add("Content-Type", "application/json")
 	req.SetBasicAuth(*username, *password)
 
-	httpClient := &http.Client{}
+	httpClient := &http.Client{
+		Timeout: 15 * time.Second,
+	}
 	resp, err := httpClient.Do(req)
 	if err != nil {
 		fmt.Printf("error submitting POST request: %v\n", err)
